@@ -9,9 +9,10 @@ html {
 }
 body {
   font-family: "Open Sans", sans-serif;
+  background-image: url("https://kartinkin.net/uploads/posts/2021-07/1626296434_25-kartinkin-com-p-neitralnii-goluboi-fon-krasivo-25.jpg");
 }
 .container {
-  width: 1140px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 5px;
 }
@@ -23,6 +24,9 @@ body {
   text-transform: uppercase;
   text-align: center;
   color: rgb(53, 53, 255);
+}
+.section-title:hover {
+  color: #f80ca9;
 }
 .header {
   background-color: blue;
@@ -37,13 +41,19 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+.menu-toggle {
+  display: none;
+}
 .header-logo {
   display: inline-block;
   width: 20%;
   padding: 0px 15px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 800;
   letter-spacing: 1px;
+}
+.header-logo:hover {
+  color: #f80ca9;
 }
 .claer-fix {
   content: "";
@@ -65,11 +75,11 @@ body {
 }
 .header-menu-link {
   text-transform: uppercase;
-  padding: 18px 14px;
+  padding: 18px 15px;
   font-size: 14px;
   transition: background-color 0.6s;
 }
-.header-menu-link:hover:hover {
+.header-menu-link:hover {
   background-color: rgb(14, 0, 13);
 }
 .intro {
@@ -79,6 +89,7 @@ body {
   justify-content: center;
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
 .intro-img {
@@ -111,7 +122,7 @@ body {
   background-color: rgb(0, 68, 255);
   gap: 40px;
   margin: 0 0 10px 0;
-  padding: 40px 0;
+  padding: 60px 0;
   border-radius: 4px;
   list-style: none;
   text-align: center;
@@ -128,15 +139,34 @@ body {
   text-align: center;
 }
 .language ol {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  grid-template-rows: repeat(2, 130px);
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin: 0 0 10px 0;
-  padding: 0;
+  grid-gap: 20px;
+  border-radius: 4%;
+  margin: 0 0 50px 0;
+  padding: 0 20px;
   list-style: none;
-  text-align: center;
 }
+.language img {
+  border-radius: 4%;
+  border: 1px solid black;
+}
+.language li {
+  display: grid;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 10%;
+  background-color: rgb(100, 124, 231);
+
+  color: #fff;
+}
+.language li:hover {
+  background-color: black;
+  transition: background-color 0.4s;
+}
+
 .codeexamples p {
   display: flex;
   justify-content: center;
@@ -160,27 +190,104 @@ body {
   text-align: center;
 }
 /* footer */
+.footer {
+  background-color: blue;
+}
 .footer a {
   color: #fff;
   text-decoration: none;
 }
-.footer {
+.footer-navigation {
+  min-height: 40px;
   display: flex;
-  margin: auto;
-  max-height: 100px;
-  background-color: blue;
+  align-items: center;
 }
 .footer-logo {
-  padding: 10px;
-  margin: 0 250px 0 0;
+  padding: 0px 15px;
+  margin: 0;
+  font-size: 18px;
+  display: inline-block;
+}
+.claer-fix {
+  content: "";
+  display: table;
+  clear: both;
+}
+.footer-menu {
+  width: 78%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 0;
 }
 .footer-link {
+  justify-content: center;
   text-transform: uppercase;
-  padding: 10px 50px;
+  margin: 0;
+  padding: 16px 15px;
   font-size: 15px;
   transition: background-color 0.6s;
+}
+.footer-menu-item1 {
+  margin: 0 0 0 160px;
 }
 .footer-link:hover {
   background-color: rgb(14, 0, 13);
 }
-/* media */
+/*media*/
+/*samsung s8+*/
+@media screen and (max-width: 360px) {
+  .intro {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .header-menu {
+    display: none;
+  }
+  .language img {
+    width: 100%;
+  }
+  .codeexamples pre {
+    width: 80%;
+  }
+  .language ol {
+    grid-template-columns: 1fr;
+    width: 80%;
+    text-align: center;
+  }
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+/*iphone 12pro*/
+@media screen and (max-width: 390px) {
+  .intro {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .header-menu {
+    display: none;
+  }
+  .language img {
+    width: 100%;
+  }
+  .codeexamples pre {
+    width: 80%;
+  }
+  .language ol {
+    grid-template-columns: 1fr;
+    width: 80%;
+    text-align: center;
+  }
+  .footer {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
